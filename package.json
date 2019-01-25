@@ -1,12 +1,12 @@
 {
-  "author": "Cam Pedersen <cam@onswipe.com> (http://campedersen.com/)",
-  "name": "bleach",
+  "author": "Cam Pedersen <cam@onswipe.com> (http://campedersen.com/), Mike Toth <mtoth@lilt.com>",
+  "name": "just-sanitize",
   "description": "A minimalistic HTML sanitizer",
-  "version": "0.3.0",
-  "homepage": "https://github.com/ecto/bleach/issues",
+  "version": "0.3.1",
+  "homepage": "https://github.com/miketoth/bleach",
   "repository": {
     "type": "git",
-    "url": "git://github.com/ecto/bleach.git"
+    "url": "git://github.com/miketoth/bleach.git"
   },
   "main": "index.js",
   "engines": {
