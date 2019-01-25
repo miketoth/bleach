@@ -1,4 +1,4 @@
-# bleach
+# Just Sanitize 
 
 Sanitize your HTML the easy way!
 
@@ -6,7 +6,7 @@ Sanitize your HTML the easy way!
 
 ## install
 
-    npm install bleach
+    yarn add just-sanitize 
 
 ## test
 
@@ -18,9 +18,9 @@ Basic:
 
 ````javascript
 
-var bleach = require('bleach');
+var js = require('just-sanitize');
 
-var html = bleach.sanitize(aBunchOfHTML);
+var html = js.sanitize(aBunchOfHTML);
 
 console.log(html);
 ````
@@ -29,7 +29,7 @@ Advanced:
 
 ````javascript
 
-var bleach = require('bleach');
+var js = require('just-sanitize');
 
 var whitelist = [
   'a',
@@ -44,14 +44,14 @@ var options = {
   list: whitelist
 }
 
-var html = bleach.sanitize(aBunchOfHTML, options);
+var html = js.sanitize(aBunchOfHTML, options);
 
 console.log(html);
 ````
 
 ## usage
 
-### bleach.sanitize(html, options)
+### js.sanitize(html, options)
 
 Runs HTML through sanitizer and returns sanitized HTML as string.
 
@@ -64,7 +64,7 @@ Runs HTML through sanitizer and returns sanitized HTML as string.
 
 `black`mode will remove all tags found in `list` that are found in `html`
 
-### bleach.analyze(html)
+### js.analyze(html)
 
 Will extract all tags from HTML and return an array of JSON objects. Example return:
 
@@ -80,58 +80,6 @@ Will extract all tags from HTML and return an array of JSON objects. Example ret
   ...
 ]
 ````
-
-### bleach.filter(html, filters)
-
-SEXY FUN TIME
-
-````javascript
-
-var nyanFilter = function(input){
-  return input.replace('cats', 'nyannyannyan');
-}
-
-console.log(
-  bleach.filter('cats', nyanFilter)
-);
-
-// nyannyannyan
-
-````
-
-````javascript
-
-var cutFilter = function(input){
-  return input.slice(0, 3);
-}
-
-console.log(
-  bleach.filter('cats', [
-    nyanFilter,
-    cutFilter
-  ])
-);
-
-// nyan
-
-````
-
-You may also define longer filters and include them in the ./node_modules/bleach/filters directory.
-A sample filter is included to convert YouTube flash embed objects to iDevice-compatible YouTube iframes.
-
-````javascript
-
-var html = '<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" width="420" height="315" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0"><param name="allowFullScreen" value="true"><param name="allowscriptaccess" value="always"><param name="src" value="http://www.youtube.com/v/aU079Mdkenw?version=3&amp;hl=en_US"><param name="allowfullscreen" value="true"><embed type="application/x-shockwave-flash" width="420" height="315" src="http://www.youtube.com/v/aU079Mdkenw?version=3&amp;hl=en_US" allowscriptaccess="always" allowfullscreen="true" id="s_media_1_0" name="s_media_1_0"></object>';
-
-console.log(
-  bleach.filter(html, 'youtube')
-);
-
-// <iframe type="text/html" frameborder="0" scrolling="no" allowfullscreen src="http://youtube.com/embed/aU079Mdkenw"></iframe>
-
-````
-
-Refer to the filters directory for the template.
 
 ## disclaimer
 
