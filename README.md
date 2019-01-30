@@ -29,9 +29,9 @@ Advanced:
 
 ````javascript
 
-var js = require('just-sanitize');
+const js = require('just-sanitize');
 
-var whitelist = [
+const whitelist = [
   'a',
   'b',
   'i',
@@ -39,12 +39,12 @@ var whitelist = [
   'strong'
 ]
 
-var options = {
+const options = {
   mode: 'white',
   list: whitelist
 }
 
-var html = js.sanitize(aBunchOfHTML, options);
+const html = js.sanitize(aBunchOfHTML, options);
 
 console.log(html);
 ````
